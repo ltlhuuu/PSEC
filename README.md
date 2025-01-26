@@ -10,7 +10,7 @@ Paper Link : <a href="https://arxiv.org/abs/2405.19909">
 designed to **facilitate efficient and flexible skill expansion and composition, iteratively evolve the agents’ capabilities and  efficiently address new challenges**. 
 
 <p float="left">
-<img src="assets/framework.jpg" width="800">
+<img src="assets/intro.png" width="800">
 </p>
 
 
