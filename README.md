@@ -51,22 +51,24 @@ Then add the following line to `.bashrc`:
 export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:~/.mujoco/mujoco210/bin
 ```
 ## Run experiments
-### Pretrain
-Pretrain the model with the following command. Meanwhile there are pre-trained models, you can download them from [here](https://drive.google.com/drive/folders/1lpcShmYoKVt4YMH66JBiA0MhYEV9aEYy?usp=sharing).
+### Pretrain for halfcheetah task
+Pretrain the model with the following command.
 ```python
 export XLA_PYTHON_CLIENT_PREALLOCATE=False
-CUDA_VISIBLE_DEVICES=0 python launcher/examples/train_pretrain.py --variant 0 --seed 0
+python run_pretrain_halfcheetah.py
 ```
+### Pretrain for walker2d task
+Pretrain the model with the following command.
+```python
+python run_pretrain_walker.py
+```
+
 ### LoRA finetune
-Train the skill policies with LoRA to achieve skill expansion. Meanwhile there are pre-trained models, you can download them from [here](https://drive.google.com/drive/folders/1lpcShmYoKVt4YMH66JBiA0MhYEV9aEYy?usp=sharing).
+Train the skill policies with LoRA to achieve skill expansion and composition.
 ```python
-CUDA_VISIBLE_DEVICES=0 python launcher/examples/train_lora_finetune.py --com_method 0 --model_cls 'LoRALearner' --variant 0 --seed 0
+python run_lora_finetune.py
 ```
-### Context-aware Composition
-Train the context-aware modular to adaptively leverage different skill knowledge to solve the tasks. You can download the pretrained model and datasets from [here](https://drive.google.com/drive/folders/1lpcShmYoKVt4YMH66JBiA0MhYEV9aEYy?usp=sharing). Then, run the following command,
-```python
-CUDA_VISIBLE_DEVICES=0 python launcher/examples/train_lora_finetune.py --com_method 0 --model_cls 'LoRASLearner' --variant 0 --seed 0
-```
+
 
 ## Citations
 If you find our paper and code useful for your research, please cite:
