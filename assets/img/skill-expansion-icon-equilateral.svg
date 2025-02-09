@@ -1,0 +1,73 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200">
+  <!-- Parameter space background grid -->
+  <defs>
+    <pattern id="grid" width="20" height="20" patternUnits="userSpaceOnUse">
+      <path d="M 20 0 L 0 0 0 20" fill="none" stroke="#f0f0f0" stroke-width="0.5"/>
+    </pattern>
+    <!-- Gradient definitions -->
+    <radialGradient id="redGradient" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" style="stop-color:#FF6B6B;stop-opacity:0.9"/>
+      <stop offset="100%" style="stop-color:#FF6B6B;stop-opacity:0.5"/>
+    </radialGradient>
+    <radialGradient id="blueGradient" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" style="stop-color:#4ECDC4;stop-opacity:0.9"/>
+      <stop offset="100%" style="stop-color:#4ECDC4;stop-opacity:0.5"/>
+    </radialGradient>
+    <radialGradient id="tealGradient" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" style="stop-color:#45B7D1;stop-opacity:0.9"/>
+      <stop offset="100%" style="stop-color:#45B7D1;stop-opacity:0.5"/>
+    </radialGradient>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="200" height="200" fill="url(#grid)"/>
+  
+  <!-- Central composition circle with subtle shadow -->
+  <circle cx="100" cy="100" r="45" fill="#4A90E2" opacity="0.15"/>
+  
+  <!-- Circles positioned at exact equilateral triangle vertices -->
+  <!-- Top vertex: (100, 70) -->
+  <!-- Bottom right vertex: (134.6, 115) = (100 + 40*cos(30°), 100 + 40*sin(30°)) -->
+  <!-- Bottom left vertex: (65.4, 115) = (100 - 40*cos(30°), 100 + 40*sin(30°)) -->
+  <circle cx="100" cy="70" r="35" fill="url(#redGradient)"/>
+  <circle cx="134.6" cy="115" r="35" fill="url(#blueGradient)"/>
+  <circle cx="65.4" cy="115" r="35" fill="url(#tealGradient)"/>
+  
+  <!-- Connecting lines forming perfect equilateral triangle -->
+  <line x1="100" y1="70" x2="134.6" y2="115" stroke="#555" stroke-width="2.5" opacity="0.4"/>
+  <line x1="134.6" y1="115" x2="65.4" y2="115" stroke="#555" stroke-width="2.5" opacity="0.4"/>
+  <line x1="65.4" y1="115" x2="100" y2="70" stroke="#555" stroke-width="2.5" opacity="0.4"/>
+  
+  <!-- Bolder expansion arrows -->
+  <!-- Right arrow -->
+  <path d="M 155 100 L 180 100 L 168 88 M 180 100 L 168 112" 
+        fill="none" 
+        stroke="#444" 
+        stroke-width="4" 
+        stroke-linecap="round"
+        stroke-linejoin="round"/>
+  
+  <!-- Left arrow -->
+  <path d="M 45 100 L 20 100 L 32 88 M 20 100 L 32 112" 
+        fill="none" 
+        stroke="#444" 
+        stroke-width="4" 
+        stroke-linecap="round"
+        stroke-linejoin="round"/>
+  
+  <!-- Bottom arrow -->
+  <path d="M 100 155 L 100 180 L 88 168 M 100 180 L 112 168" 
+        fill="none" 
+        stroke="#444" 
+        stroke-width="4" 
+        stroke-linecap="round"
+        stroke-linejoin="round"/>
+  
+  <!-- Top arrow -->
+  <path d="M 100 45 L 100 20 L 88 32 M 100 20 L 112 32" 
+        fill="none" 
+        stroke="#444" 
+        stroke-width="4" 
+        stroke-linecap="round"
+        stroke-linejoin="round"/>
+</svg>

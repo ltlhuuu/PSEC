@@ -1,0 +1,80 @@
+.login {
+    border: none; /* 移除边框 */
+    outline: none; /* 移除焦点时的轮廓 */
+    width: 20rem; /* 设置宽度 */
+    height: 3rem; /* 设置高度 */
+    border-radius: 5rem; /* 设置圆角 */
+    background-color: rgb(146, 200, 234); /* 背景色为黑色 */
+    color: rgb(250, 250, 250); /* 文字颜色为天蓝色 */
+    font-weight: bold; /* 加粗字体 */
+    font-size: 1rem; /* 字体大小 */
+    padding: 0.5rem 1.5rem; /* 内边距，调整文本与按钮边界的距离 */
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* 添加小阴影 */
+    transition: background-color 0.3s, box-shadow 0.3s; /* 添加平滑过渡效果 */
+}
+
+/* 当鼠标悬停时 */
+.login:hover {
+    background-color: #333; /* 悬停时背景变为深灰色 */
+    box-shadow: 0px 6px 10px rgba(0, 0, 0, 0.2); /* 悬停时添加更强的阴影 */
+}
+
+/* 当按钮获取焦点时 */
+.login:focus {
+    outline: none; /* 移除默认焦点轮廓 */
+    background-color: #444; /* 焦点时背景变为较深的灰色 */
+    box-shadow: 0 0 0 2px rgba(0, 0, 255, 0.5); /* 添加焦点时的蓝色外环 */
+}
+
+/* 针对在触摸设备上，模拟悬停效果 */
+.login:active {
+    background-color: #555; /* 按下时背景颜色变为深灰 */
+}
+
+
+.login2 {
+    border: none; /* 移除边框 */
+    outline: none; /* 移除焦点时的轮廓 */
+    width: 25rem; /* 设置宽度 */
+    height: 3rem; /* 设置高度 */
+    border-radius: 5rem; /* 设置圆角 */
+    background-color: rgb(146, 200, 234); /* 背景色为黑色 */
+    color: rgb(250, 250, 250); /* 文字颜色为天蓝色 */
+    font-weight: bold; /* 加粗字体 */
+    font-size: 1rem; /* 字体大小 */
+    padding: 0.5rem 1.5rem; /* 内边距，调整文本与按钮边界的距离 */
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* 添加小阴影 */
+    transition: background-color 0.3s, box-shadow 0.3s; /* 添加平滑过渡效果 */
+}
+
+/* 当鼠标悬停时 */
+.login2:hover {
+    background-color: #333; /* 悬停时背景变为深灰色 */
+    box-shadow: 0px 6px 10px rgba(0, 0, 0, 0.2); /* 悬停时添加更强的阴影 */
+}
+
+/* 当按钮获取焦点时 */
+.login2:focus {
+    outline: none; /* 移除默认焦点轮廓 */
+    background-color: #444; /* 焦点时背景变为较深的灰色 */
+    box-shadow: 0 0 0 2px rgba(0, 0, 255, 0.5); /* 添加焦点时的蓝色外环 */
+}
+
+/* 针对在触摸设备上，模拟悬停效果 */
+.login2:active {
+    background-color: #555; /* 按下时背景颜色变为深灰 */
+}
+
+
+/* 按钮切换颜色 */
+.bg-custom {
+    outline: none; /* 移除默认焦点轮廓 */
+    background-color: #444; /* 焦点时背景变为较深的灰色 */
+    box-shadow: 0 0 0 2px rgba(0, 0, 255, 0.5); /* 添加焦点时的蓝色外环 */
+}
+
+/* 非选中的按钮背景色 */
+.bg-white {
+    background-color: rgb(146, 200, 234); /* 非选中的按钮背景色为白色 */
+    color: rgb(250, 250, 250); /* 文字颜色为黑色 */
+}

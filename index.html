@@ -1,0 +1,886 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>PSEC</title>
+  
+  <style>
+    .hidden {
+      display: none;
+    }
+
+    .video-row {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 20px;
+    }
+
+    .video-container {
+      border: 2px solid #ccc;
+      border-radius: 15px;
+      padding: 5px;
+    }
+
+    video {
+      border-radius: 10px;
+    }
+
+    .always-visible {
+      display: block !important;
+      /* 强制始终可见 */
+    }
+
+    .custom-list {
+      list-style-type: disc;
+      /* 使用圆点 */
+      padding-left: 20px;
+      /* 添加左边距，使圆点和文本不重叠 */
+    }
+
+    .custom-list li {
+      font-size: 18px;
+      /* 设置字体大小 */
+      color: black;
+      /* 设置文本颜色 */
+    }
+
+    .left7container {
+      width: 60%;
+      padding: 20px;
+      box-sizing: border-box;
+      margin-left: 80px;
+      overflow: hidden;
+    }
+
+    .right3container {
+      width: 30%;
+      padding: 20px;
+      box-sizing: border-box;
+      margin-right: 30px;
+    }
+
+    .right3container img {
+      width: 100%;
+      height: auto;
+      border: 2px solid #ccc;
+      /* 图片边框 */
+    }
+
+    ul {
+      list-style-type: disc;
+    }
+  </style>
+  <!-- 在 HTML head 中添加 -->
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <meta charset="utf-8">
+  <meta name="description" content="Skill Expansion and Composition in Parameter Space">
+  <meta name="keywords"
+    content="Diffusion Model, Continual Learning, Reinforcement Learning, AI">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Diffusion-Based Planning for Autonomous Driving with Flexible Guidance</title>
+
+  <link rel="icon" href="./assets/img/skill-expansion-icon-equilateral.svg">
+
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro" rel="stylesheet">
+
+  <link rel="stylesheet" href="./assets/css/bulma.min.css">
+  <link rel="stylesheet" href="./assets/css/button.css">
+  <link rel="stylesheet" href="./assets/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="./assets/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="./assets/css/fontawesome.all.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+
+  <script defer src="./assets/js/fontawesome.all.min.js"></script>
+
+</head>
+
+<body>
+
+
+  <section class="hero">
+    <div class="hero-body">
+      <div class="container is-max-desktop">
+        <div class="columns is-centered">
+          <div class="column has-text-centered">
+            <h1 class="title is-1 publication-title is-bold">
+              <img src="./assets/img/skill-expansion-icon-equilateral.svg" style="width:1em;vertical-align: middle" alt="Logo" />
+              <span class="mmmu" style="vertical-align: middle">PSEC</span>
+            </h1>
+            <h2 class="subtitle is-3 publication-subtitle">
+              Skill Expansion and Composition in Parameter Space
+              <!-- <br>
+                and Reasoning Benchmark for Expert AGI -->
+            </h2>
+            <div class="is-size-5 publication-authors">
+              <span class="author-block">Tenglong Liu<sup style="color:#1c8427;">1*†</sup>,</span>
+              <span class="author-block">Jianxiong Li<sup style="color:#007bff;">2*</sup>,</span>
+              <span class="author-block">Yinan Zheng<sup style="color:#007bff;">2</sup>,</span>
+              <span class="author-block">Haoyi Niu<sup style="color:#007bff;">2</sup>,</span>
+              <span class="author-block">Yixing Lan<sup style="color:#1c8427;">1✉</sup>,</span>
+              <span class="author-block">Xin Xu<sup style="color:#1c8427;">1✉</sup>,</span>
+              <span class="author-block">Xianyuan Zhan<sup style="color:#007bff;">2,</sup><sup
+                  style="color:#ed4b82;">3,</sup><sup
+                  style="color:#ffac33;">4✉</sup><sup</span>
+            </div>
+
+            <br>
+
+            <div class="is-size-6 publication-authors">
+              <span class="author-block"><sup style="color:#1c8427;">1</sup>National University of Defense Technology,</span>
+              <span class="author-block"><sup style="color:#007bff;">2</sup>Tsinghua University,</span><br>
+              <span class="author-block"><sup style="color:#ed4b82;">3</sup>Shanghai Artificial Intelligence
+                Laboratory,</span>
+              <span class="author-block"><sup style="color:#ffac33;">4</sup>Beijing Academy of Artificial Intelligence</span><br>
+            </div>
+
+            <br>
+            <div class="is-size-6 publication-authors">
+              <span class="author-block">*Equal contribution, ✉Corresponding author</span><br>
+              <span class="author-block">†Project Lead:</span>
+              <span class="author-block"><a
+                  href="mailto:zhengyn23@mails.tsinghua.edu.cn">ltl@nudt.edu.cn</a></span>
+            </div>
+
+
+            <div class="column has-text-centered">
+              <h1 class="title is-4 mmmu" style="margin-top: 2vh">Accepted by ICLR 2025</h1>
+              <div class="publication-links">
+                <!-- PDF Link. -->
+                <span class="link-block">
+                  <a href="https://arxiv.org/pdf/2405.19909"
+                    class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                      <i class="fas fa-file-pdf"></i>
+                    </span>
+                    <span>Arxiv</span>
+                  </a>
+                </span>
+                </span>
+                <span class="link-block">
+                  <!-- @TODO: change links -->
+                  <a href="https://drive.google.com/drive/folders/1MqHCZZfpCxMYw0kvqA0LPJEqNYcVbt9f?usp=sharing"
+                  class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                      <p style="font-size:18px">🔗</p>
+                    </span>
+                    <span>Dataset</span>
+                  </a>
+                </span>
+                <span class="link-block">
+                  <a href="https://github.com/ltlhuuu/PSEC"
+                    class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                      <i class="fab fa-github"></i>
+                    </span>
+                    <span>Code</span>
+                  </a>
+                </span>
+                <span class="link-block">
+                  <a href="https://drive.google.com/drive/folders/15mlUgvA99fVjxgKv1XbOPX9ZGSW_QtO2?usp=sharing"
+                    class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                      <img src="./assets/img/model.png">
+                    </span>
+                    <span>Model</span>
+                  </a>
+                </span>
+
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <style>
+    .center {
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+      width: 80%;
+    }
+  </style>
+
+
+  <!-- <section class="hero is-light is-small", style=""> -->
+
+  <!-- <div class="container" style="margin-bottom: 2vh; margin-top: 2vh">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-4">Continual Learning</h2>
+      </div>
+    </div>
+  </div> -->
+  <div class="column">
+    <div class="content has-text-justified">
+    </div>
+    <div style="display: flex; justify-content: center; flex-wrap: wrap; gap: 10px;">
+        <video id="dollyzoom" autoplay controls muted loop playsinline width="8%" height="100%">
+            <source src="./assets/video/zero.mp4" type="video/mp4">
+        </video>
+        <video id="dollyzoom" autoplay controls muted loop playsinline width="8%" height="100%">
+            <source src="./assets/video/stand.mp4" type="video/mp4">
+        </video>
+        <video id="dollyzoom" autoplay controls muted loop playsinline width="8%" height="100%">
+            <source src="./assets/video/walk.mp4" type="video/mp4">
+        </video>
+        <video id="dollyzoom" autoplay controls muted loop playsinline width="8%" height="100%">
+            <source src="./assets/video/run.mp4" type="video/mp4">
+        </video>
+        <video id="dollyzoom" autoplay controls muted loop playsinline width="8%" height="100%">
+            <source src="./assets/video/psec.mp4" type="video/mp4">
+        </video>
+    </div>
+</div>
+
+  <!-- <div class="columns is-centered has-text-centered" style="margin-bottom: 2vh; margin-top: 1vh;">
+    <div class="column is-four-fifths">
+      <p><span style="color: #2FA8DF;">Future planning</span> of the ego vehicle; <span
+          style="color: #60B083;">Predictions</span> for neighboring vehicles; <span style="color: #6472EC;"> Ground
+          truth </span> ego trajectory; <span style="color: #D32B2D;">Driving history</span> of the ego vehicle.</p>
+    </div>
+  </div> -->
+  <!-- </section> -->
+
+  <section class="section">
+    <div class="container is-max-desktop" style="margin-bottom: 2vh;">
+      <!-- Abstract. -->
+      <!-- <div class="content has-text-centered">
+        <img src="./assets/img/intro.png" alt="algebraic reasoning" class="center">
+        <p><b><i>Figure 1:</i></b> PSEC Overview</p>
+      </div> -->
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-four-fifths">
+          <h2 class="title is-3">Abstract</h2>
+          <div class="content has-text-justified">
+            <p>
+              Humans excel at reusing prior knowledge to address new challenges and developing skills while solving problems. 
+              This paradigm becomes increasingly popular in the development of autonomous agents, 
+              as it develops systems that can self-evolve in response to new challenges like human beings. 
+              However, previous methods suffer from limited training efficiency when expanding new skills
+              and fail to fully leverage prior knowledge to facilitate new task learning. 
+              In this paper, we propose <b>Parametric Skill Expansion and Composition (PSEC)</b>, 
+              a new framework designed to <b>iteratively evolve the agents' capabilities and efficiently
+              address new challenges by maintaining a manageable skill library</b>. 
+              This library can progressively integrate skill primitives as plug-and-play <b>Low-Rank Adaptation (LoRA)</b> modules in parameter-efficient finetuning, 
+              facilitating efficient and flexible skill expansion. This structure also enables the direct skill compositions
+              in parameter space by merging LoRA modules that encode different skills, 
+              leveraging shared information across skills to effectively program new skills. 
+              Based on this, we propose <b>a context-aware module to dynamically activate different skills
+              to collaboratively handle new tasks</b>. Empowering diverse applications including
+              multi-objective composition, dynamics shift, and continual policy shift, the results on D4RL, DSRL benchmarks, 
+              and the DeepMind Control Suite show that PSEC exhibits superior capacity to leverage prior knowledge to efficiently tackle new challenges, 
+              as well as expand its skill libraries to evolve the capabilities. 
+            </p>
+          </div>
+        </div>
+      </div>
+      <!--/ Abstract. -->
+    </div>
+  </section>
+
+
+  <div class="content has-text-centered">
+    <img src="./assets/img/intro.png" alt="algebraic reasoning" class="center" style="max-width: 40%;">
+    <p><b><i>Figure 1:</i></b> PSEC Overview</p>
+  </div>
+
+  <section class="hero is-light is-small">
+    <div class="hero-body has-text-centered">
+      <h1 class="title is-1 mmmu">Methods</h1>
+    </div>
+  </section>
+  <section class="section">
+    <div class="container">
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-four-fifths">
+          <h2 class="title is-3">Problem Setups</h2>
+          <div class="content has-text-justified">
+            <h2 class="title is-6">We propose PSEC, a generic framework that can efficiently reuse prior knowledge and self-evolve to address new tasks.</h2>
+            <p style="text-align: justify;">
+            We consider a Markov Decision Process (MDP) where \( s \in \mathcal{S} \) and \( a \in \mathcal{A} \) are the state and action spaces, respectively. The transition dynamics are defined as \( \mathcal{P}: \mathcal{S} \times \mathcal{A} \rightarrow \Delta(\mathcal{S}) \), and the reward function is \( r: \mathcal{S} \times \mathcal{A} \rightarrow \mathbb{R} \). We assume that the state space \( \mathcal{S} \) and action space \( \mathcal{A} \) remain unchanged during training, which is a mild assumption in many relevant works.
+            We consider an agent with \( \pi_0 \) as its initial policy, which is progressively tasked with new tasks \( \mathcal{T}_i \) for \( i = 1, 2, \dots \). These tasks may differ in their rewards \( r \) or dynamics \( \mathcal{P} \), reflecting real-world scenarios where non-stationary dynamics or new challenges continually emerge. Each task is provided with several expert demonstrations \( \mathcal{D}^{\mathcal{T}_i}_{e} := \{(s, a)\} \) or a mixed-quality dataset with reward labels \( \mathcal{D}^{\mathcal{T}_i}_{o} := \{(s, a, r_i, s')\} \). Consequently, we can use either offline reinforcement learning (RL) or imitation learning (IL) to adapt to these new challenges.
+            Inspired by previous works, we maintain a policy library \( \Pi \) to store the policies associated with different tasks, as shown in Figure 1(a). Our goal is to utilize prior knowledge to enable efficient policy learning and gradually expand \( \Pi \) to incorporate new abilities throughout the training process.
+            </p>
+            <p>
+              \[
+              \Pi = \{\pi_0, \pi_1, \pi_2, \pi_3, \dots\}.
+              \]
+            </p>
+            <ul>
+              <li> Efficient Expansion: How to manage the skill library \(\Pi\) to learn new skills in an efficient and manageable way;</li>
+              <li>Efficient Composition: How to fully utilize the prior knowledge from primitives in the skill set \(\Pi\) to tackle the emerging challenges.</li>
+            </ul>
+            <!-- <div class="columns is-centered">
+              <div class="column is-half">
+                <div class="content has-text-centered">
+                  <img src="./assets/img/lora.jpg" alt="PSEC Architecture" class="center" style="max-width: 100%;">
+                  <p><b><i>Figure 1:</i></b> Learning new skills using LoRA modules.</p>
+                </div>
+              </div>
+              <div class="column is-half">
+                <div class="content has-text-centered">
+                  <img src="./assets/img/compose_lora.jpg" alt="PSEC Architecture" class="center" style="max-width: 73%;">
+                  <p><b><i>Figure 2:</i></b> Interpolation in LoRA modules.</p>
+                </div> -->
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-four-fifths">
+          <h2 class="title is-3">Efficient Policy Expansion via Low-Rank Adaptation</h2>
+          <div class="content has-text-justified">
+            <!-- <h2 class="title is-6">We propose PSEC, a generic framework that can efficiently reuse prior knowledge and self-evolve to address new tasks.</h2> -->
+            <p>
+              We consider a pretrained policy \( \pi_0 \) and denote \( \mathit{W}_0 \in \mathbb{R}^{d_{\rm in} \times d_{\rm out}} \) as its associated weight matrix. Directly finetuning \( W_0 \) to adapt to new skills might be extremely inefficient. Instead, we introduce a tune-able LoRA module \( \Delta W \) upon \( W_0 \), <em>i.e.</em>, \( \mathit{W}_0 + \Delta \mathit{W} = \mathit{W}_0 + BA \), to perform the adaptation while keeping \( \mathit{W}_0 \) frozen. Here, \( B \in \mathbb{R}^{d_{\rm in} \times n} \), \( A \in \mathbb{R}^{n \times d_{\rm out}} \), and \( n \ll \min(d_{\rm in}, d_{\rm out}) \). Specifically, the input feature of the linear layer is denoted as \( h_{\rm in} \in \mathbb{R}^{d_{\rm in}} \), and the output feature of the linear layer is \( h_{\rm out} \in \mathbb{R}^{d_{\rm out}} \). The final output of a LoRA-augmented layer can be calculated through the following forward process:
+              </p>
+              
+              <p>
+              \[
+              h_{\rm out} = (\mathit{W}_0 + \alpha \Delta \mathit{W}) h_{\rm in} = (\mathit{W}_0 + \alpha BA) h_{\rm in} = \mathit{W}_0 h_{\rm in} + \alpha BA h_{\rm in}.
+              \]
+              </p>
+              <p>
+                where \( \alpha \) is a weight to balance the pre-trained model and LoRA modules. This operation naturally prevents catastrophic forgetting in a parameter isolation approach, and the low-rank decomposition structure of \( A \) and \( B \) significantly reduces the computational burden. Benefiting from this lightweight characteristic, we can manage numerous LoRA modules \( \{\Delta \mathit{W}_i = B_i A_i \mid i \in 1, 2, \dots, k\} \) to encode different skill primitives \( \pi_i \), respectively, as shown in Figure 2. This flexible approach allows us to easily integrate new skills based on existing knowledge, while also facilitating library management by removing suboptimal primitives and retaining the effective ones. More importantly, by adjusting the value of \( \alpha \), it holds the potential to interpolate the pretrained skill in \( W_0 \) and other primitives in \( \Delta W_i \) to generate novel skills, as shown in Figure 3.
+                </p>
+                
+                <p>
+                \[
+                W = W_0 + \sum_{i=1}^{k} \alpha_i \Delta W_i = W_0 + \sum_{i=1}^{k} \alpha_i B_i A_i,
+                \]
+                </p>
+                
+                <p>
+                where \( \alpha_i \) is the weight to interpolate pre-trained weights and LoRA modules. This interpolation property has been explored in fields like text-to-image generation and language modeling, but its application in decision-making scenarios remains highly underexplored, despite LoRA's proven efficacy in skill acquisition. Next, we will elaborate on how to effectively combine LoRA modules to adapt to decision-making applications.
+                </p>
+            <div class="columns is-centered">
+              <div class="column is-half">
+                <div class="content has-text-centered">
+                  <img src="./assets/img/lora.jpg" alt="PSEC Architecture" class="center" style="max-width: 100%;">
+                  <p><b><i>Figure 2:</i></b> Learning new skills using LoRA modules.</p>
+                </div>
+              </div>
+              <div class="column is-half">
+                <div class="content has-text-centered">
+                  <img src="./assets/img/compose_lora.jpg" alt="PSEC Architecture" class="center" style="max-width: 73%;">
+                  <p><b><i>Figure 3:</i></b> Interpolation in LoRA modules.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-four-fifths">
+          <h2 class="title is-3">Context-aware Composition in Parameter Space</h2>
+          <div class="content has-text-justified">
+            <!-- <h2 class="title is-6">We propose PSEC, a generic framework that can efficiently reuse prior knowledge and self-evolve to address new tasks.</h2> -->
+            <p>
+              We propose a simple yet effective context-aware composition method that adaptively leverages pretrained knowledge to optimally address the encountering tasks according to the agent's current context. Specifically, we introduce a context-aware modular \( \alpha(s;\theta) \in \mathbb{R}^k \) with \( \alpha_i \) as its \( i \)-th dimension. The composition method can be expressed by the following equation:
+              </p>
+              
+              <p>
+              \[
+              \begin{split}
+                  W({\theta}) = W_0 + \sum_{i=1}^{k} \alpha_i(s;\theta) \Delta W_i 
+                              = W_0 + \sum_{i=1}^{k} \alpha_i(s;\theta) B_i A_i.
+              \end{split}
+              \]
+              </p>
+              <p>
+              Here, \( \alpha(s;\theta) \) adaptively adjusts output weights based on the agent's current situation \( s \), with the parameter \( \theta \) optimized via minimizing the diffusion loss.
+              </p>
+          <ul>
+            <li>
+              Comparison between parameter-, noise-, and action-level composition, as shown in Figure 4.
+                <div class="content has-text-centered">
+                  <img src="./assets/img/para_score_action.jpg" alt="algebraic reasoning" class="center" style="max-width: 100%;">
+                  <p><b><i>Figure 4:</i></b>  Parameter-level composition offers more flexibility to leverage the shared or complementary structure across skills to compose new skills. Noise- and action-level composition, however, is too late to benefit from this information.</p>
+                </div>
+                <p>
+            </li>
+            
+            <li>
+              To evaluate the advantages of parameter-level composition over other levels of composition, we employ t-SNE to project the output features of LoRA modules into a 2D space, alongside the noise and generated actions of various skills, as shown in Figure 5.</p>
+              <div class="content has-text-centered">
+                <img src="./assets/img/tsne.jpg" alt="algebraic reasoning" class="center" style="max-width: 100%;">
+                <p><b><i>Figure 5:</i></b> t-SNE projections of samples from different skills in parameter, noise, and action space. The parameter space exhibits a good structure for skill composition, where skills share common knowledge while retaining their unique features to avoid confusion. Noise and action spaces are either too noisy to clearly distinguish between skills or fail to capture the shared structure across them.</p>
+              </div>
+            </li>
+          </ul>
+          <p>
+            To achieve effective skill sharing, two primitive paradigms are introduced, including <b>Hard Parameter Sharing</b> and <b>Soft Parameter Sharing</b>, 
+            we compare the architecture of PSEC with other multitask learning frameworks, as shown in Figure 6. </p>
+            <div class="content has-text-centered">
+              <img src="./assets/img/related_work.jpg" alt="algebraic reasoning" class="center" style="max-width: 100%;">
+              <p><b><i>Figure 6:</i></b> Illustrative comparisons between PSEC and other modularized multitask learning frameworks when deployed to continual learning settings.</p>
+            </div>
+         
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  
+  
+  <!-- 推荐在页面底部添加 MathJax 配置 -->
+  <script>
+  MathJax = {
+    tex: {
+      inlineMath: [['$', '$'], ['\\(', '\\)']]
+    }
+  };
+  </script>
+
+
+  <!-- RESULTS SECTION -->
+  <section class="hero is-light is-small">
+    <div class="hero-body has-text-centered">
+      <h1 class="title is-1 mmmu">Experiment Results</h1>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-four-fifths">
+          <!-- <h2 class="title is-3">Problem Setups</h2> -->
+          <div class="content has-text-justified">
+            <!-- <h2 class="title is-6">We propose PSEC, a generic framework that can efficiently reuse prior knowledge and self-evolve to address new tasks.</h2> -->
+            <p style="text-align: justify;">
+              PSEC enjoys remarkable versatility across various scenarios since many problems can be resolved by reusing pre-trained policies and gradually evolving its capabilities during training. 
+              Thus, we present a comprehensive evaluation across diverse scenarios, including <b>multi-objective composition</b>, <b>policy learning under policy shifts</b> and <b>dynamics shifts</b>, to answer the following questions:</p>
+            <ul>
+              <li> Can the context-aware modular effectively compose different skills?</li>
+              <li> Can our parameter-level composition outperform noise- and action-level compositions?</li>
+              <li> Can the introduction of LoRA modules enhance training and sample efficiency?</li>
+              <li> Can PSEC framework iteratively evolve after incorporating more skills?</li>
+            </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="columns is-centered has-text-centered">
+        <!-- <div class="column is-full-width has-text-centered"> -->
+        <div class="column is-four-fifths">
+          <h2 class="title is-2">Multi-objective Composition</h2>
+          <div class="content has-text-justified">
+            <!-- <div class="content has-text-centered">
+              <img src="./assets/img/intro-continual.jpg" alt="PSEC Architecture" class="center" style="max-width: 70%">
+              <p><b><i>Figure 8:</i></b> Continual evolution on DeepMind Control Suite for Continual policy shift.</p>
+            </div> -->
+            <!-- <h2 class="title is-6">We propose PSEC, a generic framework that can efficiently reuse prior knowledge and self-evolve to address new tasks.</h2> -->
+            <p>
+              In many real-world applications, a complex task can be decomposed into simpler objectives, where collaboratively combining these atomic skills can tackle the complex task. In this setting, we aim to evaluate the advantages of parameter-level composition over other levels of composition in Figure 4, and the effectiveness of the context-aware modular. We consider one practical multi-objective composition scenario within the safe offline RL domain. This setting requires solving a constrained Markov Decision Process (MDP) to tackle a complex trilogy objective: avoiding distributional shift, maximizing rewards, and meanwhile minimizing costs. These objectives can conflict, thus requiring a nuanced composition to optimize performance effectively.
+            </div>
+          <h2 class="title is-3">SOTA Performance on DSRL</h2>
+          <div class="content has-text-centered">
+            <img src="./assets/img/dsrl-main.jpg" alt="algebraic reasoning" class="center">
+            <p><b><i>Table 1:</i></b> 
+              Normalized <a
+              href="https://github.com/liuzuxin/DSRL">DSRL</a> benchmark results. Costs below 1 indicate safety. <br>Results are averaged over 20 evaluation episodes and 4 seeds. <br>
+<strong>Bold</strong>: Safe agents with costs below 1. 
+<span style="color: #0000FF;">Blue</span>: Safe agents achieving the highest reward.
+<br>\( \uparrow \): the higher the better. \( \downarrow \): the lower the better.</p>
+
+      <!-- <div class="content has-text-centered">
+        <img src="./assets/img/metadrive.jpg" alt="algebraic reasoning" class="center" style="max-width: 100%;">
+        <p><b><i>Figure 1:</i></b>  Output weights of context-aware modular evaluated on the MetaDrive-easymean task. The network dynamically adjusts the weights to handle real-time demands: It prioritizes safety policies when the vehicle approaches obstacles or navigates a turn while avoiding boundary lines. When no obstacles are present and the task is simply driving straight, it shifts focus toward maximizing rewards and maintain some safety insurance.</p>
+      </div> -->
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <section class="section">
+    <div class="container">
+      <!-- Section Title -->
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-four-fifths">
+          <h2 class="title is-3" style="margin-bottom: 30px;">Visualization for Context-aware Modular </h2>
+          <div class="column">
+            <div class="content has-text-justified">
+            </div>
+            <div style="display: flex; justify-content: center; flex-wrap: wrap; gap: 10px;">
+                <video id="dollyzoom" autoplay controls muted loop playsinline width="22%" height="100%">
+                    <source src="./assets/video/metadrive1.mp4" type="video/mp4">
+                </video>
+                <video id="dollyzoom" autoplay controls muted loop playsinline width="22%" height="100%">
+                    <source src="./assets/video/metadrive2.mp4" type="video/mp4">
+                </video>
+                <video id="dollyzoom" autoplay controls muted loop playsinline width="22%" height="100%">
+                  <source src="./assets/video/metadrive3.mp4" type="video/mp4">
+              </video>
+              <video id="dollyzoom" autoplay controls muted loop playsinline width="22%" height="100%">
+                  <source src="./assets/video/metadrive4.mp4" type="video/mp4">
+              </video>
+            </div>
+        </div>
+          <div class="content has-text-centered">
+            <img src="./assets/img/metadrive.jpg" alt="algebraic reasoning" class="center">
+            <p><b><i>Figure 7:</i></b> Output weights of context-aware modular evaluated on the MetaDrive-easymean task. The network dynamically adjusts the weights to handle real-time demands: It prioritizes safety policies when the vehicle approaches obstacles or navigates a turn while avoiding boundary lines. When no obstacles are present and the task is simply driving straight, it shifts focus toward maximizing rewards and maintain some safety insurance.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+
+
+    <section class="section">
+      <div class="container">
+        <!-- Section Title -->
+        <div class="columns is-centered has-text-centered">
+          <div class="column is-four-fifths">
+            <h2 class="title is-2" style="margin-bottom: 30px;">Continual Policy Shift Setting</h2>
+            <!-- <h2 class="title is-3" style="margin-bottom: 30px;">Training and Sample Efficiency</h2> -->
+             
+            <div class="content has-text-justified">
+              <div class="content has-text-centered">
+                <img src="./assets/img/intro-continual.jpg" alt="PSEC Architecture" class="center" style="max-width: 70%">
+                <p><b><i>Figure 8:</i></b> Continual evolution on DeepMind Control Suite for Continual policy shift.</p>
+              </div>
+              <!-- <h2 class="title is-6">We propose PSEC, a generic framework that can efficiently reuse prior knowledge and self-evolve to address new tasks.</h2> -->
+              <p>
+                We evaluate another practical scenario where the agent is progressively tasked with new tasks. We aim to continuously expand the skill libraries to test if the capabilities of agents to learn new skills can be gradually enhanced as prior knowledge grows and test the efficiency of LoRA.</p>
+              <ul>
+                <li> <b>Training and sample efficiency:</b> To demonstrate the training and sample efficiency of PSEC, we conduct extensive evaluations across varying numbers of trajectories and different methods. 9 shows that PSEC achieves superior sample efficiency across different training sample sizes, particularly when data is scarce (e.g., only 10 trajectories). Figure 10 shows that PSEC can quickly attain excellent performance even without composition, highlighting the effectiveness of the LoRA modules. Hence, we train less than 50k gradient steps for almost all tasks, while previous methods typically require millions of gradient steps and data to obtain reasonable results. </li>
+                <li> <b>Continual Evolution:</b> Table 2 shows that PSEC effectively leverages prior knowledge to facilitate efficient policy learning given solely limited data. Notably, \( \text{S+W} \rightarrow \text{R} \) outperforms \( \text{S} \rightarrow \text{R} \), demonstrating that the learning capability of PSEC gradually evolves as the skill library grows. In contrast, training from scratch or replacing the LoRA modules with MLP fails to learn new skills given limited data, highlighting the effectiveness of both utilizing prior knowledge and the introduction of LoRA to efficiently adapt to new skills and self-evolution. Moreover, note that even PSEC (MLP) outperforms NSEC and ASEC, further highlighting the advantages of parameter-level compositions.</li>
+                <li> <b>Context-aware Composition v.s. Fixed Composition:</b> We carefully tune the fixed composition (w/o CA) of different skills during composition. However, Figure 11 shows that the context-aware modular can consistently outperform the fixed ones across different levels of compositions. This demonstrates the advantages of the context-aware composition network to fully leverage the prior knowledge in the skill library to enable efficient policy adaptations.</li>
+              </div>
+            <div class="columns is-centered is-gapless">
+              <div class="column is-one-third">
+                <div class="content has-text-centered">
+                  <img src="./assets/img/lora-walk.jpg" alt="PSEC Architecture" class="center" style="height: 200px; width: auto;">
+                  <p><b><i>Figure 9:</i></b> Sample efficiency.</p>
+                </div>
+              </div>
+              <div class="column is-one-third">
+                <div class="content has-text-centered">
+                  <img src="./assets/img/main_walk.jpg" alt="PSEC Architecture" class="center" style="height: 200px; width: auto;">
+                  <p><b><i>Figure 10:</i></b> Training efficiency.</p>
+                </div>
+              </div>
+              <div class="column is-one-third">
+                <div class="content has-text-centered">
+                  <img src="./assets/img/context-aware-ablation.jpg" alt="PSEC Architecture" class="center" style="height: 200px; width: auto;">
+                  <p><b><i>Figure 11:</i></b> Context-aware efficiency.</p>
+                </div>
+              </div>
+            </div>
+            <div class="columns is-centered">
+              <div class="column is-half">
+                <div class="content has-text-centered">
+                  <img src="./assets/img/continual.jpg" alt="PSEC Architecture" class="center" style="max-width: 100%;">
+                  <p><b><i>Table 2:</i></b> Results in the policy shift setting. \( \text{S} \), \( \text{W} \), and \( \text{R} \) denote stand, walk, and run, respectively. 10 trajectories are provided for \( \text{W} \) and \( \text{R} \) tasks.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <!-- Section Title -->
+        <div class="columns is-centered has-text-centered">
+          <div class="column is-four-fifths">
+            <h2 class="title is-2" style="margin-bottom: 30px;">Dynamics Shift Setting</h2>
+            <div class="content has-text-justified">
+              <div class="content has-text-centered">
+                <img src="./assets/img/intro-dynamic.jpg" alt="PSEC Architecture" class="center" style="max-width: 100%; height: auto;">
+                <p><b><i>Figure 12:</i></b> The illustration of the source and target domains for the dynamic shift setting.</p>
+              </div>
+              <p>
+                We evaluate PSEC in another practical setting to further validate its versatility, where the dynamics \( \mathcal{P} \) shift to encompass diverse scenarios such as cross-embodiment, sim-to-real transfer, and policy learning in non-stationary environments.
+              </p>
+              <div class="content has-text-centered">
+                <img src="./assets/img/main-dynamic.jpg" alt="algebraic reasoning" class="center" style="max-width: 100%;">
+                <p><b><i>Figure 13:</i></b> Results in the dynamics shift setting over 10 episodes and 5 seeds. The suffixes <code>-m</code>, <code>-mr</code>, and <code>-me</code> refer to \( \mathcal{D}_o^{\mathcal{P}_1} \) sampled from medium, medium-replay, and medium-expert-v2 data in D4RL, respectively.</p>
+              </div>
+                
+              <!-- Images in a single row with flexbox for vertical alignment -->
+              <!-- <div class="columns is-centered is-gapless">
+                <div class="column is-one-third" style="display: flex; flex-direction: column; align-items: center; justify-content: space-between;">
+                  <div class="content has-text-centered" style="flex-grow: 1;">
+                    <img src="./assets/img/continual.jpg" alt="PSEC Architecture" class="center" style="max-width: 100%; height: auto;">
+                  </div>
+                  <p><b><i>Figure 7:</i></b> Learning new skills using LoRA modules.</p>
+                </div>
+                <div class="column is-one-third" style="display: flex; flex-direction: column; align-items: center; justify-content: space-between;">
+                  <div class="content has-text-centered" style="flex-grow: 1;">
+                    <img src="./assets/img/ablation_rank_bar.jpg" alt="PSEC Architecture" class="center" style="max-width: 100%; height: auto;">
+                  </div>
+                  <p><b><i>Figure 8:</i></b> Interpolation in LoRA modules.</p>
+                </div>
+              </div> -->
+              <!-- <div class="columns is-centered">
+                <div class="column is-half">
+                  <div class="content has-text-centered">
+                    <img src="./assets/img/ablation_rank_bar.jpg" alt="PSEC Architecture" class="center" style="max-width: 100%;">
+                    <p><b><i>Figure 8:</i></b> Interpolation in LoRA modules.</p>
+                  </div>
+                </div>
+    
+              </div> -->
+            
+          </div>
+        </div>
+      </div>
+    </section>
+  
+    <section class="section">
+      <div class="container">
+        <!-- Section Title -->
+        <div class="columns is-centered has-text-centered">
+          <div class="column is-four-fifths">
+            <h2 class="title is-3" style="margin-bottom: 30px;">Ablation Study</h2>
+            <div class="content has-text-justified">
+              <!-- <h2 class="title is-6">We propose PSEC, a generic framework that can efficiently reuse prior knowledge and self-evolve to address new tasks.</h2> -->
+              <p style="text-align: justify;">
+                We primarily ablate on different LoRA ranks \(n\) to assess the robustness of our methods in continual policy shift setting. Figure 14 demonstrates that under varied LoRA \(n\) ranks, PSEC consistently outperforms the MLP variant across various LoRA ranks, demonstrating the superior robustness of LoRA modules. Among the different rank settings, we observe that {\(n=8\)} yields the best results, thus is opted as the default choice for the experiments. We hypothesize using rank larger than 8 degenerates is due to the training data being quite limited (e.g. only 10 demonstrations)
+              </div>
+            <div class="content has-text-centered">
+              <img src="./assets/img/ablation_rank_bar.jpg" alt="algebraic reasoning" class="center" style="max-width: 50%;">
+              <p><b><i>Figure 14:</i></b> Ablations on LoRA ranks.</p>
+            </div>
+          </div>
+        </div>
+
+  <section class="section" id="BibTeX">
+    <div class="container is-max-desktop content">
+      <h2 class="title is-3 has-text-centered">BibTeX</h2>
+      <pre><code>
+        @inproceedings{
+        liu2025psec,
+        title={Skill Expansion and Composition in Parameter Space},
+        author={Tenglong Liu, Jianxiong Li, Yinan Zheng, Haoyi Niu, Yixing Lan, Xin Xu, Xianyuan Zhan},
+        booktitle={International Conference on Learning Representations},
+        year={2025},
+        url={https://openreview.net/forum?id=GLWf2fq0bX}
+        }
+      </code></pre>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <!-- <div class="container"> -->
+    <div class="columns is-centered">
+      <div class="column is-8">
+        <div class="content has-text-centered">
+          <p>
+            This website is website adapted from <a href="https://mmmu-benchmark.github.io/">MMMU</a>, licensed under a
+            <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Creative
+              Commons Attribution-ShareAlike 4.0 International License</a>.
+          </p>
+        </div>
+      </div>
+    </div>
+  </footer>
+</body>
+
+
+<script>let currentSlide = 0;
+
+  //  <!-- zjl revise here!!!!! -->
+  const slide_length = [0, 6, 10, 16, 20]
+  const slideContainer = document.getElementById('slider-container');
+  const slides = slideContainer.children;
+  const dots = document.querySelectorAll('#slider-dots button');
+  const totalSlides = slides.length;
+  function updateSlider(animate = true) {
+    const slideWidth = slides[0].offsetWidth + 16;
+    const offset = currentSlide * slideWidth;
+
+    if (animate) {
+      slideContainer.style.transition = 'transform 0.5s cubic-bezier(0.4, 0, 0.2, 1)';
+    } else {
+      slideContainer.style.transition = 'none';
+    }
+
+    slideContainer.style.transform = `translateX(-${offset}px)`;
+
+    dots.forEach((dot, index) => {
+      dot.style.backgroundColor = (slide_length[index] <= currentSlide & currentSlide < slide_length[index + 1]) ? '#4F46E5' : '#D1D5DB';
+    });
+  }
+  function slideLeft() {
+    if (currentSlide > 0) {
+      currentSlide--;
+      updateSlider();
+    } else {
+      // Optional: Bounce effect when at the start
+      slideContainer.style.transform = `translateX(20px)`;
+      setTimeout(() => {
+        slideContainer.style.transform = `translateX(0px)`;
+      }, 150);
+    }
+  }
+  function slideRight() {
+    if (currentSlide < totalSlides - 1) {
+      currentSlide++;
+      updateSlider();
+    } else {
+      // Optional: Bounce effect when at the end
+      const maxOffset = (totalSlides - 1) * (slides[0].offsetWidth + 16);
+      slideContainer.style.transform = `translateX(-${maxOffset - 20}px)`;
+      setTimeout(() => {
+        slideContainer.style.transform = `translateX(-${maxOffset}px)`;
+      }, 150);
+    }
+  }
+  function handleTouchStart(e) {
+    const touch = e.touches[0];
+    window.touchStartX = touch.clientX;
+    window.touchStartY = touch.clientY;
+    slideContainer.style.transition = 'none';
+  }
+  function handleTouchMove(e) {
+    if (!window.touchStartX) return;
+
+    const touch = e.touches[0];
+    const diffX = touch.clientX - window.touchStartX;
+    const diffY = touch.clientY - window.touchStartY;
+
+    // If vertical scrolling is dominant, don't slide
+    if (Math.abs(diffY) > Math.abs(diffX)) return;
+
+    e.preventDefault();
+    const slideWidth = slides[0].offsetWidth + 16;
+    const currentOffset = -(currentSlide * slideWidth);
+    const newOffset = currentOffset + diffX;
+
+    slideContainer.style.transform = `translateX(${newOffset}px)`;
+  }
+  function handleTouchEnd(e) {
+    if (!window.touchStartX) return;
+
+    const touch = e.changedTouches[0];
+    const diffX = touch.clientX - window.touchStartX;
+
+    if (Math.abs(diffX) > 50) {
+      if (diffX > 0 && currentSlide > 0) {
+        slideLeft();
+      } else if (diffX < 0 && currentSlide < totalSlides - 1) {
+        slideRight();
+      } else {
+        updateSlider();
+      }
+    } else {
+      updateSlider();
+    }
+
+    window.touchStartX = null;
+    window.touchStartY = null;
+  }
+  // Add touch events
+  slideContainer.addEventListener('touchstart', handleTouchStart);
+  slideContainer.addEventListener('touchmove', handleTouchMove);
+  slideContainer.addEventListener('touchend', handleTouchEnd);
+  // Add click event listeners to buttons
+  const leftButton = document.getElementById('id-88');
+  const rightButton = document.getElementById('id-90');
+  if (leftButton) leftButton.addEventListener('click', slideLeft);
+  if (rightButton) rightButton.addEventListener('click', slideRight);
+  // Add click events to dots
+  dots.forEach((dot, index) => {
+    dot.addEventListener('click', () => {
+      currentSlide = slide_length[index];
+      updateSlider();
+    });
+  });
+  // Initialize slider
+  document.addEventListener('DOMContentLoaded', () => {
+    updateSlider(false);
+  });
+  // Update on window resize with debounce
+  let resizeTimeout;
+  window.addEventListener('resize', () => {
+    clearTimeout(resizeTimeout);
+    resizeTimeout = setTimeout(() => updateSlider(false), 100);
+  });</script>
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    const videoContainers = document.querySelectorAll('.video-container');
+    const videoButtons = document.querySelectorAll('.video-switch-btn');
+    const imageContainers = document.querySelectorAll('.image-container');
+    const imageButtons = document.querySelectorAll('.image-switch-btn');
+
+    // 显示相应组的内容并更新按钮颜色
+    function showGroup(groupNumber, containers, buttons) {
+        containers.forEach(container => {
+            if (container.classList.contains(`group-${groupNumber}`)) {
+                container.style.display = 'block';
+            } else {
+                container.style.display = 'none';
+            }
+        });
+
+        buttons.forEach(btn => {
+            if (btn.dataset.group === groupNumber.toString()) {
+                btn.classList.add('bg-custom', 'text-white'); // 设置选中的按钮样式
+                btn.classList.remove('bg-white');
+            } else {
+                btn.classList.remove('bg-custom', 'text-white'); // 移除非选中按钮的样式
+                btn.classList.add('bg-white');
+            }
+        });
+    }
+
+    // 为视频按钮添加点击事件
+    videoButtons.forEach(btn => {
+        btn.addEventListener('click', () => {
+            showGroup(parseInt(btn.dataset.group), videoContainers, videoButtons);
+        });
+    });
+
+    // 为图片按钮添加点击事件
+    imageButtons.forEach(btn => {
+        btn.addEventListener('click', () => {
+            showGroup(parseInt(btn.dataset.group), imageContainers, imageButtons);
+        });
+    });
+
+    // 初始化时默认显示第一组（组1）
+    showGroup(1, videoContainers, videoButtons);
+    showGroup(1, imageContainers, imageButtons);
+});
+
+  // const initialimgButton = document.querySelector('.image-switch-btn[data-group="1"]');
+  // if (initialimgButton) {
+  //   initialimgButton.focus(); // 触发按钮的 focus 状态
+  // }
+
+  // const initialvideoButton = document.querySelector('.video-switch-btn[data-group="1"]');
+  // if (initialvideoButton) {
+  //  initialvideoButton.focus(); // 触发按钮的 focus 状态
+  // }
+</script>
