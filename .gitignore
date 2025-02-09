@@ -1,0 +1,14 @@
+wandb/
+*.pyc
+.history
+results/
+eval_results/
+evaluation*
+action*
+eval_video/
+record_video/
+launcher/plot
+env/fig/
+env/log/
+env/used/
+log/
