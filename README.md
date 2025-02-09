@@ -1,4 +1,4 @@
-# PSEC: Skill Expansion and Composition in Parameter Space
+# PSEC: Skill Expansion and Composition in Parameter Space  <img src="assets/icon.svg" width="50">
 International Conference on Learning Representation (ICLR), 2025 
 
 Paper Link : <a href="https://arxiv.org/abs/2405.19909">
