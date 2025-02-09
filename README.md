@@ -76,9 +76,9 @@ If you find our paper and code useful for your research, please cite:
 liu2025psec,
 title={Skill Expansion and Composition in Parameter Space},
 author={Tenglong Liu, Jianxiong Li, Yinan Zheng, Haoyi Niu, Yixing Lan, Xin Xu, Xianyuan Zhan},
-booktitle={International Conference on Learning Representations},
+booktitle={The Thirteenth International Conference on Learning Representations},
 year={2025},
-url={https://openreview.net/XXX}
+url={https://openreview.net/forum?id=GLWf2fq0bX}
 }
 ```
 
