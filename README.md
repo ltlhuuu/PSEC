@@ -32,10 +32,14 @@ Then install the remaining requirements (with MuJoCo already downloaded, if not 
 pip install -r requirements.txt
 ```
 
-Install the `MetaDrive` environment via
-```python
-pip install git+https://github.com/HenryLHH/metadrive_clean.git@main
+Install the [D4RL](https://github.com/Farama-Foundation/D4RL) benchmark
+
+```bash
+git clone https://github.com/Farama-Foundation/D4RL.git
+cd d4rl
+pip install -e .
 ```
+
 ### MuJoCo installation
 Download MuJoCo:
 ```bash
