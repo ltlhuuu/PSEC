@@ -33,10 +33,6 @@ Then install the remaining requirements (with MuJoCo already downloaded, if not 
 pip install -r requirements.txt
 ```
 
-Install the `MetaDrive` environment via
-```python
-pip install git+https://github.com/HenryLHH/metadrive_clean.git@main
-```
 ### MuJoCo installation
 Download MuJoCo:
 ```bash
