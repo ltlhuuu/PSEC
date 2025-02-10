@@ -1,11 +1,10 @@
 <div align="center">
   <div style="margin-bottom: 30px">  <!-- 减少底部间距 -->
-    <div style="display: flex; flex-direction: column; align-items: center; gap: 8px">
-  <h1 align="center" style="margin: 0; line-height: 1; position: relative">
-    <span style="font-size: 48px; font-weight: 600;">PSEC</span>
-    <img src="assets/icon.svg" width="50" style="position: relative; top: 8px"> <!-- 相对定位下移 -->
-  </h1>
-</div>
+    <div style="display: flex; flex-direction: column; align-items: center; gap: 8px">  <!-- 新增垂直布局容器 -->
+      <h1 align="center" style="margin: 0; line-height: 1;">
+        <span style="font-size: 48px; font-weight: 600;">PSEC</span>
+      </h1>
+    </div>
     <h2 style="font-size: 32px; margin: 20px 0;">Skill Expansion and Composition in Parameter Space</h2>
     <h3 style="color: #666; margin-bottom: 25px;">International Conference on Learning Representation (ICLR), 2025</h3>
     <p align="center" style="margin: 30px 0;">
@@ -29,7 +28,7 @@
     🔥 Official PyTorch Implementation
   </p>
   <p style="font-size: 18px; max-width: 800px; margin: 0 auto;">
-    <b>PSEC</b> is a novel framework designed to:
+            <img src="assets/icon.svg" width="20"> <b>PSEC</b> is a novel framework designed to:
   </p>
 </div>
 <div align="left">
