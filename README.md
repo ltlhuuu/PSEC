@@ -11,14 +11,15 @@
       <a href="https://arxiv.org/abs/2405.19909">
         <img src="https://img.shields.io/badge/arXiv-2405.19909-b31b1b.svg">
       </a>
-      &nbsp;&nbsp;
+      <!-- &nbsp;&nbsp; -->
       <a href="https://ltlhuuu.github.io/PSEC/">
         <img src="https://img.shields.io/badge/🌐_Project_Page-PSEC-blue.svg">
       </a>
-      &nbsp;&nbsp;
+      <!-- &nbsp;&nbsp; -->
       <a href="https://arxiv.org/pdf/2405.19909.pdf">
         <img src="https://img.shields.io/badge/📑_Paper-PSEC-green.svg">
       </a>
+      <!-- &nbsp;&nbsp; -->
     </p>
   </div>
 </div>
