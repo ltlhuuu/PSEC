@@ -1,7 +1,7 @@
 <div align="center">
   <div style="margin-bottom: 50px">
+  <img src="assets/icon.svg" width="60" style="vertical-align: middle; margin-right: 15px;">
     <h1 align="center" style="margin: 0; line-height: 1;">
-      <img src="assets/icon.svg" width="60" style="vertical-align: middle; margin-right: 15px;">
       <span style="font-size: 48px; font-weight: 600; vertical-align: middle;">PSEC</span>
     </h1>
     <h2 style="font-size: 32px; margin: 20px 0;">Skill Expansion and Composition in Parameter Space</h2>
@@ -21,7 +21,6 @@
     </p>
   </div>
 </div>
-
 <div align="center">
   <p style="font-size: 20px; font-weight: 600; margin-bottom: 20px;">
     🔥 Official PyTorch Implementation
@@ -29,14 +28,33 @@
   <p style="font-size: 18px; max-width: 800px; margin: 0 auto;">
     <b>PSEC</b> is a novel framework designed to:
   </p>
-  <br>
-  <ul style="list-style: none; padding: 0; max-width: 800px; margin: 0 auto; text-align: left;">
-    <li>🚀 <b>Facilitate</b> efficient and flexible skill expansion and composition</li>
-    <li>🔄 <b>Iteratively evolve</b> the agents' capabilities</li>
-    <li>⚡ <b>Efficiently address</b> new challenges</li>
-  </ul>
 </div>
+<br>
+<div align="left" style="max-width: 800px; margin: 0 auto;">
+  <!-- 项目1 -->
+  <div style="display: flex; align-items: baseline; margin-bottom: 8px;">
+    <span style="margin-right: 12px;">🚀</span>
+    <div>
+      <b>Facilitate</b> efficient and flexible skill expansion and composition
+    </div>
+  </div>
 
+  <!-- 项目2 -->
+  <div style="display: flex; align-items: baseline; margin-bottom: 8px;">
+    <span style="margin-right: 12px;">🔄</span>
+    <div>
+      <b>Iteratively evolve</b> the agents' capabilities
+    </div>
+  </div>
+
+  <!-- 项目3 -->
+  <div style="display: flex; align-items: baseline;">
+    <span style="margin-right: 12px;">⚡</span>
+    <div>
+      <b>Efficiently address</b> new challenges
+    </div>
+  </div>
+</div>
 
 <p align="center">
  <img src="assets/intro.png" width="800" style="margin: 40px 0;">
