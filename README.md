@@ -1,9 +1,11 @@
 <div align="center">
-  <div style="margin-bottom: 50px">
-  <img src="assets/icon.svg" width="60" style="vertical-align: middle; margin-right: 15px;">
-    <h1 align="center" style="margin: 0; line-height: 1;">
-      <span style="font-size: 48px; font-weight: 600; vertical-align: middle;">PSEC</span>
-    </h1>
+  <div style="margin-bottom: 30px">  <!-- 减少底部间距 -->
+    <div style="display: flex; flex-direction: column; align-items: center; gap: 8px">  <!-- 新增垂直布局容器 -->
+      <img src="assets/icon.svg" width="60">
+      <h1 align="center" style="margin: 0; line-height: 1;">
+        <span style="font-size: 48px; font-weight: 600;">PSEC</span>
+      </h1>
+    </div>
     <h2 style="font-size: 32px; margin: 20px 0;">Skill Expansion and Composition in Parameter Space</h2>
     <h3 style="color: #666; margin-bottom: 25px;">International Conference on Learning Representation (ICLR), 2025</h3>
     <p align="center" style="margin: 30px 0;">
@@ -21,6 +23,7 @@
     </p>
   </div>
 </div>
+
 <div align="center">
   <p style="font-size: 20px; font-weight: 600; margin-bottom: 20px;">
     🔥 Official PyTorch Implementation
@@ -29,31 +32,12 @@
     <b>PSEC</b> is a novel framework designed to:
   </p>
 </div>
-<br>
-<div align="left" style="max-width: 800px; margin: 0 auto;">
-  <!-- 项目1 -->
-  <div style="display: flex; align-items: baseline; margin-bottom: 8px;">
-    <span style="margin-right: 12px;">🚀</span>
-    <div>
-      <b>Facilitate</b> efficient and flexible skill expansion and composition
-    </div>
-  </div>
-
-  <!-- 项目2 -->
-  <div style="display: flex; align-items: baseline; margin-bottom: 8px;">
-    <span style="margin-right: 12px;">🔄</span>
-    <div>
-      <b>Iteratively evolve</b> the agents' capabilities
-    </div>
-  </div>
-
-  <!-- 项目3 -->
-  <div style="display: flex; align-items: baseline;">
-    <span style="margin-right: 12px;">⚡</span>
-    <div>
-      <b>Efficiently address</b> new challenges
-    </div>
-  </div>
+<div align="left">
+  <p style="font-size: 15px; font-weight: 600; margin-bottom: 20px;">
+    🚀 <b>Facilitate</b> efficient and flexible skill expansion and composition <br>
+     🔄 <b>Iteratively evolve</b> the agents' capabilities<br>
+      ⚡ <b>Efficiently address</b> new challenges
+  </p>
 </div>
 
 <p align="center">
