@@ -25,7 +25,7 @@
 
 <div align="center">
   <p style="font-size: 20px; font-weight: 600; margin-bottom: 20px;">
-    🔥 Official PyTorch Implementation
+    🔥 Official Implementation
   </p>
   <p style="font-size: 18px; max-width: 800px; margin: 0 auto;">
             <img src="assets/icon.svg" width="20"> <b>PSEC</b> is a novel framework designed to:
