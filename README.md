@@ -8,15 +8,15 @@
     <h2 style="font-size: 32px; margin: 20px 0;">Skill Expansion and Composition in Parameter Space</h2>
     <h4 style="color: #666; margin-bottom: 25px;">International Conference on Learning Representation (ICLR), 2025</h4>
     <p align="center" style="margin: 30px 0;">
-      <a href="https://arxiv.org/abs/2405.19909">
-        <img src="https://img.shields.io/badge/arXiv-2405.19909-b31b1b.svg">
+      <a href="https://arxiv.org/abs/2502.05932">
+        <img src="https://img.shields.io/badge/arXiv-2502.05932-b31b1b.svg">
       </a>
       &nbsp;&nbsp;
       <a href="https://ltlhuuu.github.io/PSEC/">
         <img src="https://img.shields.io/badge/🌐_Project_Page-PSEC-blue.svg">
       </a>
       &nbsp;&nbsp;
-      <a href="https://arxiv.org/pdf/2405.19909.pdf">
+      <a href="https://arxiv.org/pdf/2502.05932.pdf">
         <img src="https://img.shields.io/badge/📑_Paper-PSEC-green.svg">
       </a>
     </p>
